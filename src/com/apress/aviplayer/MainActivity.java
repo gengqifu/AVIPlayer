@@ -45,11 +45,14 @@ public class MainActivity extends Activity implements OnClickListener {
 	
 	int radioId = playerRadioGroup.getCheckedRadioButtonId();
 	
-	/*switch (radioId) {
+	switch (radioId) {
+	case R.id.bitmap_player_radio:
+	    intent = new Intent(this, BitmapPlayerActivity.class);
+	    break;
 	default:
 	    	throw new UnsupportedOperationException(
 	    			"radioId=" + radioId);
-	}*/
+	}
 	
 	File file = new File(Environment.getExternalStorageDirectory(), fileNameEdit.getText().toString());
 	intent.putExtra(AbstractPlayerActivity.EXTRA_FILE_NAME, file.getAbsolutePath());
